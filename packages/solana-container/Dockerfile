@@ -22,9 +22,10 @@ RUN cargo build --bin solana-test-validator --release
 FROM debian:bullseye as final
 
 RUN apt update && \
-    apt-get install -y bzip2 && \
+    apt-get install -y bzip2 libssl-dev && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /workspace/solana/target/release/solana-test-validator /bin/solana-test-validator
 
+EXPOSE 8899 8900
 CMD ["solana-test-validator"]
