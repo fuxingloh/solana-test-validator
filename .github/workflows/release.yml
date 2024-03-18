@@ -96,4 +96,4 @@ jobs:
 
       - run: pnpm -r exec npm version ${{ needs.version.outputs.result }} --git-tag-version=false
 
-      - run: pnpm turbo run push:docker --filter=${{ matrix.package }} --concurrency=1
+      - run: pnpm turbo run push:docker --filter=${{ matrix.package }}
