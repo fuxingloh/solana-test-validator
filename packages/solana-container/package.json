@@ -4,8 +4,8 @@
   "private": true,
   "license": "MPL-2.0",
   "scripts": {
-    "build:docker": "docker build -t ghcr.io/fuxingloh/solana-container:$(node -p \"require('./version.js')\") -f Dockerfile ../../ --build-arg SOLANA_VERSION=$(node -p \"require('./version.js')\")",
-    "push:docker": "docker buildx build -t ghcr.io/fuxingloh/solana-container:$(node -p \"require('./version.js')\") -f Dockerfile ../../ --output type=registry --platform linux/amd64,linux/arm64 --build-arg SOLANA_VERSION=$(node -p \"require('./version.js')\")"
+    "build:docker": "docker buildx build -t ghcr.io/fuxingloh/solana-container:$(node -p \"require('./version.js')\") -f Dockerfile ../../ --build-arg SOLANA_VERSION=$(node -p \"require('./version.js')\") --cache-from type=registry,ref=ghcr.io/fuxingloh/solana-container:build-cache",
+    "push:docker": "docker buildx build -t ghcr.io/fuxingloh/solana-container:$(node -p \"require('./version.js')\") -f Dockerfile ../../ --output type=registry --platform linux/amd64,linux/arm64 --build-arg SOLANA_VERSION=$(node -p \"require('./version.js')\") --cache-to type=registry,ref=ghcr.io/fuxingloh/solana-container:build-cache,mode=max --cache-from type=registry,ref=ghcr.io/fuxingloh/solana-container:build-cache"
   },
   "lint-staged": {
     "*": [
