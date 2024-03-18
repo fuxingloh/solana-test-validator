@@ -1,8 +1,8 @@
-FROM debian:bullseye as builder
+FROM debian:bookworm as builder
 
 # Install os deps
 RUN apt update && \
-    apt-get install -y build-essential clang cmake curl libudev-dev pkg-config && \
+    apt-get install -y build-essential clang cmake curl libudev-dev pkg-config protobuf-compiler && \
     rm -rf /var/lib/apt/lists/*
 
 # Setup rust
@@ -17,14 +17,19 @@ RUN curl https://codeload.github.com/solana-labs/solana/tar.gz/refs/tags/v$SOLAN
 RUN mv solana-$SOLANA_VERSION /workspace/solana
 
 WORKDIR /workspace/solana
+RUN cargo fetch
+
+# Do not optimize the build to reduce the build time, since this is testcontainers not to be used in production.
+ENV RUSTFLAGS="-C opt-level=0"
 RUN cargo build --bin solana-test-validator --release
 
-FROM debian:bullseye as final
+FROM debian:bookworm as runner
 
 RUN apt update && \
-    apt-get install -y bzip2 && \
+    apt-get install -y bzip2 libssl-dev && \
     rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /workspace/solana/target/release/solana-test-validator /bin/solana-test-validator
 
+EXPOSE 8899 8900
 CMD ["solana-test-validator"]

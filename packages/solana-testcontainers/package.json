@@ -17,7 +17,7 @@
     "build": "tsc --project tsconfig.build.json",
     "clean": "tsc --build --clean",
     "lint": "eslint .",
-    "test": "jest --passWithNoTests"
+    "test": "jest --passWithNoTests --forceExit"
   },
   "lint-staged": {
     "*": [
