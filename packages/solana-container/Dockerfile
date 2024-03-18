@@ -27,4 +27,4 @@ RUN apt update && \
 
 COPY --from=builder /workspace/solana/target/release/solana-test-validator /bin/solana-test-validator
 
-CMD ["solana-test-validator", "--log"]
+CMD ["solana-test-validator"]

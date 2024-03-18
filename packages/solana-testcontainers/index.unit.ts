@@ -1,45 +1,17 @@
 import { afterAll, beforeAll, describe, expect, it } from '@jest/globals';
-import { createPublicClient, http, PublicClient } from 'viem';
-import { solana } from 'viem/chains';
-import waitForExpect from 'wait-for-expect';
+import { Connection, PublicKey } from '@solana/web3.js';
 
 import { SolanaContainer, StartedSolanaContainer } from './index';
 
-describe('default container', () => {
+describe('SolanaContainer', () => {
   let container: StartedSolanaContainer;
+  let connection: Connection;
 
   beforeAll(async () => {
     container = await new SolanaContainer().start();
-  });
-
-  afterAll(async () => {
-    await container.stop();
-  });
-
-  it('should expose host rpc url', async () => {
-    expect(container.getHostRpcUrl()).toMatch(/http:\/\/localhost:\d+/);
-  });
-
-  it('should rpc(eth_blockNumber) via viem', async () => {
-    const client = createPublicClient({
-      chain: solana,
-      transport: http(container.getHostRpcUrl()),
-    });
-
-    const blockNumber = await client.getBlockNumber();
-    expect(blockNumber).toBeGreaterThanOrEqual(0n);
-  });
-});
-
-describe('auto mining container 2000ms interval', () => {
-  let container: StartedSolanaContainer;
-  let client: PublicClient;
-
-  beforeAll(async () => {
-    container = await new SolanaContainer().withMiningInterval(2000).start();
-    client = createPublicClient({
-      chain: solana,
-      transport: http(container.getHostRpcUrl()),
+    connection = new Connection(container.getHostRpcEndpoint(), {
+      commitment: 'processed',
+      wsEndpoint: container.getHostWsEndpoint(),
     });
   });
 
@@ -47,10 +19,24 @@ describe('auto mining container 2000ms interval', () => {
     await container.stop();
   });
 
-  it('should auto mine block', async () => {
-    await waitForExpect(async () => {
-      const blockNumber = await client.getBlockNumber();
-      expect(blockNumber).toBeGreaterThan(1n);
-    }, 6000);
+  it('should expose host rpc endpoint', async () => {
+    expect(container.getHostRpcEndpoint()).toMatch(/http:\/\/localhost:\d+/);
+  });
+
+  it('should get processed block height', async () => {
+    const blockHeight = await connection.getBlockHeight('processed');
+    expect(blockHeight).toBeGreaterThanOrEqual(0);
+  });
+
+  it('should fund address with 5129000000 lamports with confirmation', async () => {
+    const publicKey = new PublicKey('Emp8JcXpFnCXzdWBC3ChRPtNQHiiQW6kr61wopT3hbNL');
+    const lamports = 5_129_000_000;
+
+    const block = await connection.getLatestBlockhash('processed');
+    const signature = await connection.requestAirdrop(publicKey, lamports);
+    await connection.confirmTransaction({ signature, ...block }, 'processed');
+
+    const balance = await connection.getBalance(publicKey, 'processed');
+    expect(balance).toStrictEqual(lamports);
   });
 });

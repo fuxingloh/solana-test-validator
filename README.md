@@ -2,26 +2,52 @@
 
 ```typescript
 import { SolanaContainer, StartedSolanaContainer } from 'solana-testcontainers';
-import { createPublicClient, http, PublicClient } from 'viem';
-import { solana } from 'viem/chains';
+import { Connection, PublicKey } from '@solana/web3.js';
 
-let container: StartedSolanaContainer;
+describe('SolanaContainer', () => {
+  let container: StartedSolanaContainer;
+  let connection: Connection;
 
-beforeAll(async () => {
-  container = await new SolanaContainer().start();
-});
+  beforeAll(async () => {
+    container = await new SolanaContainer().start();
+    connection = new Connection(container.getHostRpcEndpoint(), {
+      commitment: 'processed',
+      wsEndpoint: container.getHostWsEndpoint(),
+    });
+  });
 
-afterAll(async () => {
-  await container.stop();
-});
+  afterAll(async () => {
+    await container.stop();
+  });
 
-it('should rpc(eth_blockNumber) via viem', async () => {
-  const client = createPublicClient({ chain: solana, transport: http(container.getHostRpcUrl()) });
+  it('should get processed block height', async () => {
+    const blockHeight = await connection.getBlockHeight('processed');
+    expect(blockHeight).toBeGreaterThanOrEqual(0);
+  });
 
-  const blockNumber = await client.getBlockNumber();
-  expect(blockNumber).toStrictEqual(BigInt(0));
+  it('should fund address with 5129000000 lamports with confirmation', async () => {
+    const publicKey = new PublicKey('Emp8JcXpFnCXzdWBC3ChRPtNQHiiQW6kr61wopT3hbNL');
+    const lamports = 5_129_000_000;
+
+    const block = await connection.getLatestBlockhash('processed');
+    const signature = await connection.requestAirdrop(publicKey, lamports);
+    await connection.confirmTransaction({ signature, ...block }, 'processed');
+
+    const balance = await connection.getBalance(publicKey, 'processed');
+    expect(balance).toStrictEqual(lamports);
+  });
 });
 ```
+
+## Motivation
+
+This library creates a Docker image that isolates the toolchain for Solana from the host system.
+This is particularly useful for language-agnostic development and parallelization of systems.
+
+The default [solanalabs/solana](https://hub.docker.com/r/solanalabs/solana) is an optimized image,
+when used on a host system that does not support AVX, it will fail with the following error:
+Incompatible CPU detected: missing AVX support.
+Please build from source on the target.
 
 ## License
 

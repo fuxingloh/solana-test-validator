@@ -23,7 +23,11 @@ export class StartedSolanaContainer extends AbstractStartedContainer {
     super(startedTestContainer);
   }
 
-  getHostRpcUrl(): string {
+  getHostRpcEndpoint(): string {
     return `http://${this.getHost()}:${this.getMappedPort(8899)}`;
+  }
+
+  getHostWsEndpoint(): string {
+    return `ws://${this.getHost()}:${this.getMappedPort(8900)}`;
   }
 }
