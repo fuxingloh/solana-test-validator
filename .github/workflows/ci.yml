@@ -31,6 +31,9 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      # Pre-run build steps
+      - run: pnpm --filter=solana-container run build:docker
+
       - run: pnpm turbo run build
 
   test:
