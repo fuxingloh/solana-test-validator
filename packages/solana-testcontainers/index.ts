@@ -1,7 +1,7 @@
 import { AbstractStartedContainer, GenericContainer, StartedTestContainer, Wait } from 'testcontainers';
 
 // renovate: datasource=github-releases depName=solana-labs/solana
-const SOLANA_VERSION = '1.10.38';
+const SOLANA_VERSION = '1.17.26';
 
 export class SolanaContainer extends GenericContainer {
   constructor(image: string = `ghcr.io/fuxingloh/solana-container:${SOLANA_VERSION}`) {
