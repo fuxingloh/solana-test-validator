@@ -1,4 +1,4 @@
-FROM debian:bullseye as builder
+FROM debian:bookworm as builder
 
 # Install os deps
 RUN apt update && \
@@ -19,7 +19,7 @@ RUN mv solana-$SOLANA_VERSION /workspace/solana
 WORKDIR /workspace/solana
 RUN cargo build --bin solana-test-validator --release
 
-FROM debian:bullseye as final
+FROM debian:bookworm as final
 
 RUN apt update && \
     apt-get install -y bzip2 && \
