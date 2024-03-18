@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "clean": {
+      "cache": false
+    },
+    "build": {
+      "inputs": ["tsconfig.json", "tsconfig.build.json", "./**/*.ts", "./**/*.json"],
+      "outputs": ["./**/*.js", "./**/*.d.ts", "./**/*.d.ts.map"],
+      "dependsOn": ["^build"]
+    },
+    "build:docker": {
+      "inputs": ["Dockerfile", "tsconfig.json", "tsconfig.build.json", "./**/*.ts"],
+      "outputs": [],
+      "dependsOn": []
+    },
+    "push:docker": {
+      "cache": false
+    },
+    "test": {
+      "inputs": ["tsconfig.json", "./**/*.ts", "./**/*.unit.ts", "./tests-i9n/**", "./tests-e2e/**"],
+      "dependsOn": ["^build"]
+    },
+    "lint": {
+      "outputs": []
+    }
+  }
+}

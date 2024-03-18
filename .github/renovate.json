@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", "helpers:pinGitHubActionDigests", ":semanticCommits", ":semanticCommitTypeAll(bump)"],
+  "dependencyDashboard": true,
+  "dependencyDashboardAutoclose": false,
+  "major": {
+    "dependencyDashboardApproval": false
+  },
+  "rangeStrategy": "bump",
+  "regexManagers": [
+    {
+      "fileMatch": ["version.js", "index.ts"],
+      "matchStrings": [
+        "datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?\\sconst .*?_VERSION *= *'(?<currentValue>.*)';\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@contentedjs/"],
+      "groupName": "@contentedjs"
+    },
+    {
+      "matchPackagePatterns": ["^@eslint/", "^eslint$"],
+      "groupName": "@eslint"
+    }
+  ]
+}

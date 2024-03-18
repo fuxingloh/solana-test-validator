@@ -1,0 +1,10 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "extends": ["//"],
+  "pipeline": {
+    "test": {
+      "inputs": ["tsconfig.json", "./**/*.ts", "./**/*.unit.ts", "./tests-i9n/**", "./tests-e2e/**"],
+      "dependsOn": ["solana-container#build:docker", "^build"]
+    }
+  }
+}

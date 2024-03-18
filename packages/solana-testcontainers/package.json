@@ -1,0 +1,43 @@
+{
+  "name": "solana-testcontainers",
+  "version": "0.0.0",
+  "private": false,
+  "repository": {
+    "url": "git+https://github.com/fuxingloh/solana-container"
+  },
+  "license": "MPL-2.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "index.d.ts.map"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "tsc --build --clean",
+    "lint": "eslint .",
+    "test": "jest --passWithNoTests"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "preset": "@workspace/jest-preset"
+  },
+  "dependencies": {
+    "@solana/web3.js": "1.91.1",
+    "testcontainers": "^10.7.2"
+  },
+  "devDependencies": {
+    "@workspace/jest-preset": "workspace:*",
+    "@workspace/tsconfig": "workspace:*",
+    "solana-container": "workspace:*"
+  }
+}

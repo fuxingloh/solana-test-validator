@@ -1,0 +1,37 @@
+{
+  "name": "@workspace/root",
+  "private": true,
+  "license": "MPL-2.0",
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "format": "prettier --write .",
+    "lint": "turbo run lint -- --fix",
+    "prepare": "husky",
+    "test": "turbo run test"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown"
+  },
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@swc/core": "^1.4.8",
+    "@swc/jest": "^0.2.36",
+    "@types/node": "^20.11.28",
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/prettier-config": "workspace:*",
+    "eslint": "^8.57.0",
+    "husky": "^9.0.11",
+    "jest": "29.7.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "turbo": "^1.12.5",
+    "typescript": "5.4.2",
+    "wait-for-expect": "^3.0.2"
+  },
+  "packageManager": "pnpm@8.15.5",
+  "engines": {
+    "node": "^20 <21",
+    "pnpm": "^8 <9"
+  }
+}
