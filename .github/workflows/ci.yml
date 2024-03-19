@@ -13,9 +13,6 @@ concurrency:
 permissions:
   contents: read
 
-env:
-  BUILDKIT_PROGRESS: plain
-
 jobs:
   build:
     name: Build
