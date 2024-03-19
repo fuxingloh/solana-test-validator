@@ -10,7 +10,7 @@ describe('SolanaContainer', () => {
   beforeAll(async () => {
     container = await new SolanaContainer().start();
     connection = new Connection(container.getHostRpcEndpoint(), {
-      commitment: 'processed',
+      commitment: 'confirmed',
       wsEndpoint: container.getHostWsEndpoint(),
     });
   });
@@ -26,6 +26,15 @@ describe('SolanaContainer', () => {
   it('should get processed block height', async () => {
     const blockHeight = await connection.getBlockHeight('processed');
     expect(blockHeight).toBeGreaterThanOrEqual(0);
+  });
+
+  it('should get block 0', async () => {
+    const block = await connection.getBlock(0);
+    expect(block).toMatchObject({
+      blockHeight: 0,
+      // Not deterministic
+      blockhash: expect.any(String),
+    });
   });
 
   it('should fund address with 5129000000 lamports with confirmation', async () => {

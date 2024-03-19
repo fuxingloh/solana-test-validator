@@ -7,9 +7,6 @@ on:
 permissions:
   contents: read
 
-env:
-  BUILDKIT_PROGRESS: plain
-
 jobs:
   version:
     runs-on: ubuntu-latest
