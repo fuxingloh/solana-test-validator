@@ -18,6 +18,10 @@
   ],
   "packageRules": [
     {
+      "matchPackageNames": ["node", "typescript", "@types/node"],
+      "enabled": false
+    },
+    {
       "matchPackagePatterns": ["^@contentedjs/"],
       "groupName": "@contentedjs"
     },
