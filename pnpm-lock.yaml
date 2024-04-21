@@ -60,8 +60,8 @@ importers:
         version: 10.8.2
     devDependencies:
       '@solana/web3.js':
-        specifier: 1.91.4
-        version: 1.91.4
+        specifier: 1.91.7
+        version: 1.91.7
       '@workspace/jest-preset':
         specifier: workspace:*
         version: link:../../workspace/jest-preset
@@ -840,8 +840,8 @@ packages:
       buffer: 6.0.3
     dev: true
 
-  /@solana/web3.js@1.91.4:
-    resolution: {integrity: sha512-zconqecIcBqEF6JiM4xYF865Xc4aas+iWK5qnu7nwKPq9ilRYcn+2GiwpYXqUqqBUe0XCO17w18KO0F8h+QATg==}
+  /@solana/web3.js@1.91.7:
+    resolution: {integrity: sha512-HqljZKDwk6Z4TajKRGhGLlRsbGK4S8EY27DA7v1z6yakewiUY3J7ZKDZRxcqz2MYV/ZXRrJ6wnnpiHFkPdv0WA==}
     dependencies:
       '@babel/runtime': 7.24.0
       '@noble/curves': 1.4.0
