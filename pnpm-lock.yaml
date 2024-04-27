@@ -56,8 +56,8 @@ importers:
   packages/solana-testcontainers:
     dependencies:
       testcontainers:
-        specifier: ^10.8.2
-        version: 10.8.2
+        specifier: ^10.9.0
+        version: 10.9.0
     devDependencies:
       '@solana/web3.js':
         specifier: 1.91.7
@@ -4780,8 +4780,8 @@ packages:
       minimatch: 3.1.2
     dev: true
 
-  /testcontainers@10.8.2:
-    resolution: {integrity: sha512-9Ink7NUyYZwOjQhk0C6R6basWy2WADNly+md3D9YDap0pcDr3C+vrO8Ah1bkYco/9Zg8VoYTHO+blkLeebBYkA==}
+  /testcontainers@10.9.0:
+    resolution: {integrity: sha512-LN+cKAOd61Up9SVMJW+3VFVGeVQG8JBqZhEQo2U0HBfIsAynyAXcsLBSo+KZrOfy9SBz7pGHctWN/KabLDbNFA==}
     dependencies:
       '@balena/dockerignore': 1.0.2
       '@types/dockerode': 3.3.26
