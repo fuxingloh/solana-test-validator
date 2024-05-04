@@ -35,7 +35,7 @@
     "testcontainers": "^10.9.0"
   },
   "devDependencies": {
-    "@solana/web3.js": "1.91.7",
+    "@solana/web3.js": "1.91.8",
     "@workspace/jest-preset": "workspace:*",
     "@workspace/tsconfig": "workspace:*",
     "solana-container": "workspace:*"
