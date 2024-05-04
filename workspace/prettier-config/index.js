@@ -6,7 +6,7 @@ const config = {
   endOfLine: 'lf',
   tabWidth: 2,
   useTabs: false,
-  plugins: [import('prettier-plugin-tailwindcss'), import('prettier-plugin-packagejson')],
+  plugins: [import('prettier-plugin-packagejson')],
 };
 
 module.exports = config;
