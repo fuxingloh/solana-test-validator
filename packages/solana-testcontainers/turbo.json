@@ -3,7 +3,7 @@
   "extends": ["//"],
   "pipeline": {
     "test": {
-      "inputs": ["tsconfig.json", "./**/*.ts", "./**/*.unit.ts", "./tests-i9n/**", "./tests-e2e/**"],
+      "inputs": ["tsconfig.json", "./**/*.ts", "./**/*.test.ts"],
       "dependsOn": ["solana-container#build:docker", "^build"]
     }
   }
