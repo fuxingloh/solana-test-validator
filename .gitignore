@@ -8,14 +8,5 @@ build
 *.tgz
 coverage
 .nyc_output
-
-# tsconfig.json
-packages/*/**/*.d.ts
-packages/*/**/*.d.ts.map
-packages/*/**/*.js
-
-# turborepo
 .turbo
-
-# contented
-.contented
+.chainfile

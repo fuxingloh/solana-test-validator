@@ -1,0 +1,22 @@
+{
+  "name": "chainfile-solana",
+  "version": "0.0.0",
+  "private": false,
+  "repository": {
+    "url": "git+https://github.com/vetumorg/chainfile-solana"
+  },
+  "license": "MPL-2.0",
+  "files": [
+    "*.json"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "@workspace/jest-preset"
+  },
+  "devDependencies": {
+    "@chainfile/testcontainers": "^0.5.0"
+  }
+}

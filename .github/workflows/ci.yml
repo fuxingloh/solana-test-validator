@@ -12,6 +12,7 @@ concurrency:
 
 permissions:
   contents: read
+  packages: read
 
 jobs:
   build:
@@ -30,9 +31,27 @@ jobs:
 
       - run: pnpm turbo run build
 
-  test:
-    name: Test
+  test_plan:
+    name: Test [plan]
     runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.plan.outputs.packages }}
+    steps:
+      - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+
+      - uses: fuxingloh/turbo-plan@4bd6ef3cdb543fbf5fca55b6b5b74892acecdfa5 # v2
+        id: plan
+        with:
+          task: test
+
+  test_run:
+    name: Test [run]
+    needs: test_plan
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        package: ${{ fromJSON(needs.test_plan.outputs.packages) }}
     steps:
       - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
 
@@ -44,10 +63,19 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
-      # Pre-run build steps, required for the test step
-      - run: pnpm --filter=solana-container run build:docker
+      - run: pnpm turbo run test --filter=${{ matrix.package }}
 
-      - run: pnpm turbo run test
+  test_completed:
+    name: Test [completed]
+    runs-on: ubuntu-latest
+    if: always()
+    needs:
+      - test_run
+    steps:
+      - run: |
+          if ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'skipped') || contains(needs.*.result, 'cancelled') }} ; then          
+            exit 1
+          fi
 
   lint_prettier:
     name: Lint [prettier]

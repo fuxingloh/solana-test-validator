@@ -1,0 +1,38 @@
+{
+  "$schema": "https://chainfile.org/schema.json",
+  "caip2": "solana:00000000000000000000000000000000",
+  "name": "Solana Test Validator",
+  "values": {
+    "version": "1.18.15"
+  },
+  "containers": {
+    "solana": {
+      "image": "ghcr.io/vetumorg/solana-test-validator",
+      "tag": {
+        "$value": "version"
+      },
+      "source": "https://github.com/vetumorg/chainfile-solana",
+      "resources": {
+        "cpu": 0.25,
+        "memory": 256
+      },
+      "endpoints": {
+        "rpc": {
+          "port": 8899,
+          "protocol": "HTTP JSON-RPC 2.0",
+          "probes": {
+            "readiness": {
+              "params": [],
+              "method": "getBlockHeight",
+              "match": {
+                "result": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
