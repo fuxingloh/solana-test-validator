@@ -60,8 +60,8 @@ importers:
   packages/chainfile-solana:
     devDependencies:
       '@chainfile/testcontainers':
-        specifier: ^0.5.0
-        version: 0.5.0
+        specifier: ^0.5.1
+        version: 0.5.1
 
   packages/solana-docker: {}
 
@@ -465,25 +465,25 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@chainfile/docker@0.5.0:
-    resolution: {integrity: sha512-GYlaUDUlQpvXzVNJrqZv37Veyw/KFuP6vZJo2uBQ8cPp9FnSlyD3auGaSJPNoDwL7YGtZ1spKe8jFUKRQJYAfQ==}
+  /@chainfile/docker@0.5.1:
+    resolution: {integrity: sha512-T+2xuyJC1pAg84RXLfcOzb/V4uHDWeQDl9gbsV/2PrIjFdaXIA79DsQhPV6T7FWNI0oVAPEr/Y7Wu0+BNL2W/w==}
     dependencies:
-      '@chainfile/schema': 0.5.0
+      '@chainfile/schema': 0.5.1
       ajv: 8.16.0
       ajv-formats: 3.0.1(ajv@8.16.0)
       js-yaml: 4.1.0
       lodash: 4.17.21
     dev: true
 
-  /@chainfile/schema@0.5.0:
-    resolution: {integrity: sha512-1E+NSoGijFTlWWaXGWwdrgm+TAh3mZcLVjnprVcaNqfJHd830qsui3yfkGAugs8iiHFk6epiovzKGnkUUA09Mw==}
+  /@chainfile/schema@0.5.1:
+    resolution: {integrity: sha512-p4LHKLvROLPPvqAJzcc6s+3/QFmhH382gQ1EcTvYXRhS/6Lzhs5ob5Hk+C5KLnkFpZLZUrGuTUSKjcnBHUmc0A==}
     dev: true
 
-  /@chainfile/testcontainers@0.5.0:
-    resolution: {integrity: sha512-rmp02ct7HYfV8KPVCegNXq9X9x4wh9en8bmyMqCZ9AQkiUTc84FBoJMSjtFlRTmojb9EPolaH8AMgYKDbb5QLw==}
+  /@chainfile/testcontainers@0.5.1:
+    resolution: {integrity: sha512-/f+ZX1Yu3MbBiXtiTAFqAugOi43HTv1LEwjvF7nK4+37+9mP4nI1c2w8E0OwWwfGWxdShT1q5CGo900/AEIjkw==}
     dependencies:
-      '@chainfile/docker': 0.5.0
-      '@chainfile/schema': 0.5.0
+      '@chainfile/docker': 0.5.1
+      '@chainfile/schema': 0.5.1
       testcontainers: 10.9.0
     transitivePeerDependencies:
       - encoding
@@ -2798,6 +2798,7 @@ packages:
 
   /glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -2961,6 +2962,7 @@ packages:
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
