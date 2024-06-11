@@ -1,5 +1,5 @@
-import { afterAll, beforeAll, describe, expect, it } from '@jest/globals';
 import { ChainfileTestcontainers } from '@chainfile/testcontainers';
+import { afterAll, beforeAll, describe, expect, it } from '@jest/globals';
 
 import test from './test-validator.json';
 
