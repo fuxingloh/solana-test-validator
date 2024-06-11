@@ -1,0 +1,15 @@
+{
+  "name": "solana-docker",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MPL-2.0",
+  "scripts": {
+    "build:docker": "node docker.mjs build",
+    "push:docker": "node docker.mjs push"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ]
+  }
+}

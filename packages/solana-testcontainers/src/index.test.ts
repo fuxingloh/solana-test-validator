@@ -1,23 +1,3 @@
-# Chainfile Solana
-
-Part of the [Chainfile](https://chainfile.org) ecosystem,
-this library provides a Docker image for running `solana-test-validator` in a container for toolchain isolation.
-This is particularly useful for language-agnostic development and parallelization of systems.
-
-> The default [solanalabs/solana](https://hub.docker.com/r/solanalabs/solana) is an optimized image,
-> when used on a host system that does not support AVX, it will fail with the following error:
-> `Incompatible CPU detected: missing AVX support. Please build from source on the target.`
-
-## `solana-testcontainers`
-
-This is a standalone testcontainers-node package for running `solana-test-validator` in a container for testing
-purposes. You don't need to use the Chainfile ecosystem to use this package.
-
-```shell
-npm i -D solana-testcontainers @solana/web3.js
-```
-
-```typescript
 import { afterAll, beforeAll, expect, it } from '@jest/globals';
 import { Connection, PublicKey } from '@solana/web3.js';
 
@@ -35,10 +15,20 @@ afterAll(async () => {
   await container.stop();
 });
 
+it('should expose host rpc endpoint', async () => {
+  expect(container.getHostRpcEndpoint()).toMatch(/http:\/\/localhost:\d+/);
+});
+
+it('should get processed block height', async () => {
+  const blockHeight = await connection.getBlockHeight('processed');
+  expect(blockHeight).toBeGreaterThanOrEqual(0);
+});
+
 it('should get block 0', async () => {
   const block = await connection.getBlock(0);
   expect(block).toMatchObject({
     blockHeight: 0,
+    // Not deterministic
     blockhash: expect.any(String),
   });
 });
@@ -54,8 +44,3 @@ it('should fund address with 5129000000 lamports with confirmation', async () =>
   const balance = await connection.getBalance(publicKey, 'processed');
   expect(balance).toStrictEqual(lamports);
 });
-```
-
-## License
-
-MPL-2.0

@@ -3,21 +3,19 @@
   "version": "0.0.0",
   "private": false,
   "repository": {
-    "url": "git+https://github.com/fuxingloh/solana-container"
+    "url": "git+https://github.com/vetumorg/chainfile-solana"
   },
   "license": "MPL-2.0",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "index.js",
-    "index.d.ts",
-    "index.d.ts.map"
+    "dist/**"
   ],
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
-    "clean": "tsc --build --clean",
+    "clean": "rm -rf dist",
     "lint": "eslint .",
-    "test": "jest --passWithNoTests --forceExit"
+    "test": "jest --forceExit"
   },
   "lint-staged": {
     "*": [
@@ -35,9 +33,9 @@
     "testcontainers": "^10.9.0"
   },
   "devDependencies": {
-    "@solana/web3.js": "1.91.8",
-    "@workspace/jest-preset": "workspace:*",
-    "@workspace/tsconfig": "workspace:*",
-    "solana-container": "workspace:*"
+    "@solana/web3.js": "1.91.8"
+  },
+  "peerDependencies": {
+    "@solana/web3.js": "^1"
   }
 }

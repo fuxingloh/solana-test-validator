@@ -6,9 +6,8 @@
       <excludeFolder url="file://$MODULE_DIR$/pnpm-lock.yaml" />
       <excludeFolder url="file://$MODULE_DIR$/.husky" />
       <excludePattern pattern=".turbo" />
-      <excludePattern pattern="*.js" />
-      <excludePattern pattern="*.d.ts" />
-      <excludePattern pattern="*.d.ts.map" />
+      <excludePattern pattern=".chainfile" />
+      <excludePattern pattern="dist" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

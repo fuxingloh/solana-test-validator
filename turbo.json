@@ -1,25 +1,28 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
+  "globalDependencies": ["tsconfig.json"],
+  "tasks": {
     "clean": {
       "cache": false
     },
     "build": {
-      "inputs": ["tsconfig.json", "tsconfig.build.json", "./**/*.ts", "./**/*.json"],
-      "outputs": ["./**/*.js", "./**/*.d.ts", "./**/*.d.ts.map"],
+      "inputs": ["src/**"],
+      "outputs": ["dist/**"],
       "dependsOn": ["^build"]
     },
     "build:docker": {
-      "inputs": ["Dockerfile", "tsconfig.json", "tsconfig.build.json", "./**/*.ts"],
-      "outputs": [],
-      "dependsOn": []
+      "cache": false
     },
     "push:docker": {
       "cache": false
     },
     "test": {
-      "inputs": ["tsconfig.json", "./**/*.ts", "./**/*.test.ts"],
-      "dependsOn": ["^build"]
+      "dependsOn": ["solana-docker#build:docker", "^build"]
+    },
+    "solana-testcontainers#build": {
+      "inputs": ["src/**"],
+      "outputs": ["dist/**"],
+      "dependsOn": ["solana-docker#build:docker", "^build"]
     },
     "lint": {
       "outputs": []
