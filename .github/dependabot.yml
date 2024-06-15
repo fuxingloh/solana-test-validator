@@ -9,7 +9,24 @@ updates:
     schedule:
       interval: 'weekly'
     groups:
-      eslint:
-        patterns:
+      development:
+        dependency-type: development
+        update-types:
+          - 'minor'
+          - 'patch'
+        exclude-patterns:
           - 'eslint'
+          - '@solana/web3.js'
+          - 'chainfile-*'
+          - '@chainfile/*'
+      workspace:
+        update-types:
+          - 'minor'
+          - 'patch'
+        patterns:
+          - 'prettier-*'
+          - 'typescript-eslint'
+          - 'globals'
           - '@eslint/*'
+          - 'eslint'
+          - 'eslint-*'
