@@ -1,0 +1,10 @@
+{
+  "name": "@workspace/jest",
+  "private": true,
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@swc/core": "^1.6.1",
+    "@swc/jest": "0.2.36",
+    "wait-for-expect": "^3.0.2"
+  }
+}

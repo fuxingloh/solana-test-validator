@@ -15,18 +15,6 @@ updates:
           - 'minor'
           - 'patch'
         exclude-patterns:
-          - 'eslint'
           - '@solana/web3.js'
           - 'chainfile-*'
           - '@chainfile/*'
-      workspace:
-        update-types:
-          - 'minor'
-          - 'patch'
-        patterns:
-          - 'prettier-*'
-          - 'typescript-eslint'
-          - 'globals'
-          - '@eslint/*'
-          - 'eslint'
-          - 'eslint-*'
