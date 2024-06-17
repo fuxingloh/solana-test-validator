@@ -17,6 +17,6 @@
     "preset": "@workspace/jest"
   },
   "devDependencies": {
-    "@chainfile/testcontainers": "^0.6.0"
+    "@chainfile/testcontainers": "^0.6.1"
   }
 }

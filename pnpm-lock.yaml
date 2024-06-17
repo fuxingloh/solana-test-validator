@@ -48,8 +48,8 @@ importers:
   packages/chainfile-solana:
     devDependencies:
       '@chainfile/testcontainers':
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.6.1
+        version: 0.6.1
 
   packages/solana-docker: {}
 
@@ -291,14 +291,14 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
-  '@chainfile/docker@0.6.0':
-    resolution: {integrity: sha512-gkPzTU7efYCbiDFzDvyot/FJ3u7agbgULBk0Fq2vbzWv/rEtnuEf/NS1bG4o1QJvuSqeRiVDyID9QbNzClnLMg==}
+  '@chainfile/docker@0.6.1':
+    resolution: {integrity: sha512-Ev6uPnzMjyAJ77DqBOORHqKz82y3je7AhyXAy6eb2xaTpLg96zo5J9ICaQYJxnblREaJqtp4MgNOkAxMVx/qIQ==}
 
-  '@chainfile/schema@0.6.0':
-    resolution: {integrity: sha512-ql9zWe7ypHy+3Kk4jc2rGJQO5L6TEF2PL8ZsqIpp9JwqA3mfxBIpCpCM+DBD2MZr2m4+33nB92YPDWAPABwZ+w==}
+  '@chainfile/schema@0.6.1':
+    resolution: {integrity: sha512-128om1RxNYaiPBTspr952l6EPxLSUXaPUj0hNlB5B+DInhLiHxYTbBsCRklwXBBgLACPaCHzsnPTwCzPDvW5xA==}
 
-  '@chainfile/testcontainers@0.6.0':
-    resolution: {integrity: sha512-3laoMyGCqkFRgqZrqXet9f0ltFRkNdrMaPTObns4OmCWKnUyDYz60tL/jyK5c6FQz9mcO0RWeGMtUNBLi0nmiA==}
+  '@chainfile/testcontainers@0.6.1':
+    resolution: {integrity: sha512-ivBXCow97Xx5eASA7pXkuYw1C+5lKR/ZXWFmb5jFfRpuKHTPAaJqO2zofGY7RzMwNojkopjUhd85FnERXR+S+A==}
 
   '@eslint-community/eslint-utils@4.4.0':
     resolution: {integrity: sha512-1/sA4dwrzBAyeUoQ6oxahHKmrZvsnLCg4RfxW3ZFGGmQkSNQPFNLV9CUEFQP1x9EYXHTo5p6xdhZM1Ne9p/AfA==}
@@ -325,6 +325,7 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -332,6 +333,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.2':
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
+    deprecated: Use @eslint/object-schema instead
 
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -1483,6 +1485,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   globals@11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
@@ -1588,6 +1591,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -2313,6 +2317,7 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rpc-websockets@8.0.1:
@@ -2998,20 +3003,20 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
-  '@chainfile/docker@0.6.0':
+  '@chainfile/docker@0.6.1':
     dependencies:
-      '@chainfile/schema': 0.6.0
+      '@chainfile/schema': 0.6.1
       js-yaml: 4.1.0
 
-  '@chainfile/schema@0.6.0':
+  '@chainfile/schema@0.6.1':
     dependencies:
       ajv: 8.16.0
       ajv-formats: 3.0.1(ajv@8.16.0)
 
-  '@chainfile/testcontainers@0.6.0':
+  '@chainfile/testcontainers@0.6.1':
     dependencies:
-      '@chainfile/docker': 0.6.0
-      '@chainfile/schema': 0.6.0
+      '@chainfile/docker': 0.6.1
+      '@chainfile/schema': 0.6.1
       testcontainers: 10.9.0
     transitivePeerDependencies:
       - encoding
