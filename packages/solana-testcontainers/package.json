@@ -27,7 +27,7 @@
     ]
   },
   "jest": {
-    "preset": "@workspace/jest-preset"
+    "preset": "@workspace/jest"
   },
   "dependencies": {
     "testcontainers": "^10.9.0"

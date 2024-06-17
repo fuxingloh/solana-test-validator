@@ -1,5 +1,5 @@
-import { afterAll, beforeAll, expect, it } from '@jest/globals';
 import { Connection, PublicKey } from '@solana/web3.js';
+import { afterAll, beforeAll, expect, it } from '@workspace/jest/globals';
 
 import { SolanaContainer, StartedSolanaContainer } from './index';
 

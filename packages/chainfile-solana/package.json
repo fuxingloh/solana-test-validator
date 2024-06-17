@@ -14,7 +14,7 @@
     "test": "jest"
   },
   "jest": {
-    "preset": "@workspace/jest-preset"
+    "preset": "@workspace/jest"
   },
   "devDependencies": {
     "@chainfile/testcontainers": "^0.6.0"
