@@ -3,7 +3,7 @@ module.exports = {
   reporters: ['default', 'github-actions'],
   moduleFileExtensions: ['ts', 'js', 'mjs', 'cjs', 'json'],
   transform: {
-    '^.+\\.(t|j)sx?$': '@swc/jest',
+    '^.+\\.(t|j)sx?$': '@workspace/jest/transform',
   },
   testTimeout: 60000,
 };

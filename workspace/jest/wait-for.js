@@ -1,2 +1,2 @@
-import waitFor from 'wait-for-expect';
-export default waitFor;
+// Allows waitFor to be used without installing it globally
+module.exports = require('wait-for-expect');
