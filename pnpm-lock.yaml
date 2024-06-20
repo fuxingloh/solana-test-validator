@@ -60,8 +60,8 @@ importers:
         version: 10.9.0
     devDependencies:
       '@solana/web3.js':
-        specifier: 1.92.3
-        version: 1.92.3(bufferutil@4.0.8)(utf-8-validate@5.0.10)
+        specifier: 1.93.0
+        version: 1.93.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
 
   workspace/eslint-config:
     devDependencies:
@@ -97,10 +97,10 @@ importers:
         version: 29.7.0
       '@swc/core':
         specifier: ^1.6.1
-        version: 1.6.1
+        version: 1.6.1(@swc/helpers@0.5.11)
       '@swc/jest':
         specifier: 0.2.36
-        version: 0.2.36(@swc/core@1.6.1)
+        version: 0.2.36(@swc/core@1.6.1(@swc/helpers@0.5.11))
       wait-for-expect:
         specifier: ^3.0.2
         version: 3.0.2
@@ -331,6 +331,7 @@ packages:
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
+    deprecated: Use @eslint/config-array instead
 
   '@humanwhocodes/module-importer@1.0.1':
     resolution: {integrity: sha512-bxveV4V8v5Yb4ncFTT3rPSgZBOpCkjfK0y4oVVVJwIuDVBRMDXrPyXRL988i5ap9m9bnyEEjWfm5WkBmtffLfA==}
@@ -338,6 +339,7 @@ packages:
 
   '@humanwhocodes/object-schema@2.0.2':
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
+    deprecated: Use @eslint/object-schema instead
 
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
@@ -471,8 +473,8 @@ packages:
     resolution: {integrity: sha512-E1ImOIAD1tBZFRdjeM4/pzTiTApC0AOBGwyAMS4fwIodCWArzJ3DWdoh8cKxeFM2fElkxBh2Aqts1BPC373rHA==}
     engines: {node: '>=5.10'}
 
-  '@solana/web3.js@1.92.3':
-    resolution: {integrity: sha512-NVBWvb9zdJIAx6X+caXaIICCEQfQaQ8ygykCjJW4u2z/sIKcvPj3ZIIllnx0MWMc3IxGq15ozGYDOQIMbwUcHw==}
+  '@solana/web3.js@1.93.0':
+    resolution: {integrity: sha512-suf4VYwWxERz4tKoPpXCRHFRNst7jmcFUaD65kII+zg9urpy5PeeqgLV6G5eWGzcVzA9tZeXOju1A1Y+0ojEVw==}
 
   '@swc/core-darwin-arm64@1.6.1':
     resolution: {integrity: sha512-u6GdwOXsOEdNAdSI6nWq6G2BQw5HiSNIZVcBaH1iSvBnxZvWbnIKyDiZKaYnDwTLHLzig2GuUjjE2NaCJPy4jg==}
@@ -546,6 +548,9 @@ packages:
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
 
+  '@swc/helpers@0.5.11':
+    resolution: {integrity: sha512-YNlnKRWF2sVojTpIyzwou9XoTNbzbzONwRhOoniEioF1AtaitTvVZblaQRrAzChWQ1bLYyYSWzM18y4WwgzJ+A==}
+
   '@swc/jest@0.2.36':
     resolution: {integrity: sha512-8X80dp81ugxs4a11z1ka43FPhP+/e+mJNXJSxiNYk8gIX/jPBtY4gQTrKu/KIoco8bzKuPI5lUxjfLiGsfvnlw==}
     engines: {npm: '>= 7.0.0'}
@@ -612,8 +617,14 @@ packages:
   '@types/stack-utils@2.0.3':
     resolution: {integrity: sha512-9aEbYZ3TbYMznPdcdr3SmIrLXwC/AKZXQeCf9Pgao5CKb8CyHuEX5jzWPTkvregvhRJHcpRO6BFoGW9ycaOkYw==}
 
+  '@types/uuid@8.3.4':
+    resolution: {integrity: sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw==}
+
   '@types/ws@7.4.7':
     resolution: {integrity: sha512-JQbbmxZTZehdc2iszGKs5oC3NFnjeay7mtAWrdt7qNtAVK0g19muApzAy4bm9byz79xa2ZnO/BOBC2R8RC5Lww==}
+
+  '@types/ws@8.5.10':
+    resolution: {integrity: sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==}
 
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
@@ -1335,9 +1346,6 @@ packages:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
 
-  eventemitter3@4.0.7:
-    resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
-
   eventemitter3@5.0.1:
     resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
 
@@ -1489,6 +1497,7 @@ packages:
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    deprecated: Glob versions prior to v9 are no longer supported
 
   globals@11.12.0:
     resolution: {integrity: sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA==}
@@ -1594,6 +1603,7 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -2319,10 +2329,11 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
+    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
-  rpc-websockets@8.0.1:
-    resolution: {integrity: sha512-PptrPRK40uQvifq5sCcObmqInVcZXhy+RRrirzdE5KUPvDI47y1wPvfckD2QzqngOU9xaPW/dT+G+b+wj6M1MQ==}
+  rpc-websockets@9.0.1:
+    resolution: {integrity: sha512-JCkdc/TfJBGRfmjIFK7cmqX79nwPWUd9xCM0DAydRbdLShsW3j/GV2gmPlaFa8V1+2u4V/O47fm4ZR5+F6HyDw==}
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -3287,7 +3298,7 @@ snapshots:
     dependencies:
       buffer: 6.0.3
 
-  '@solana/web3.js@1.92.3(bufferutil@4.0.8)(utf-8-validate@5.0.10)':
+  '@solana/web3.js@1.93.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)':
     dependencies:
       '@babel/runtime': 7.24.7
       '@noble/curves': 1.4.0
@@ -3302,7 +3313,7 @@ snapshots:
       fast-stable-stringify: 1.0.0
       jayson: 4.1.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
       node-fetch: 2.7.0
-      rpc-websockets: 8.0.1
+      rpc-websockets: 9.0.1
       superstruct: 1.0.4
     transitivePeerDependencies:
       - bufferutil
@@ -3339,7 +3350,7 @@ snapshots:
   '@swc/core-win32-x64-msvc@1.6.1':
     optional: true
 
-  '@swc/core@1.6.1':
+  '@swc/core@1.6.1(@swc/helpers@0.5.11)':
     dependencies:
       '@swc/counter': 0.1.3
       '@swc/types': 0.1.8
@@ -3354,13 +3365,18 @@ snapshots:
       '@swc/core-win32-arm64-msvc': 1.6.1
       '@swc/core-win32-ia32-msvc': 1.6.1
       '@swc/core-win32-x64-msvc': 1.6.1
+      '@swc/helpers': 0.5.11
 
   '@swc/counter@0.1.3': {}
 
-  '@swc/jest@0.2.36(@swc/core@1.6.1)':
+  '@swc/helpers@0.5.11':
+    dependencies:
+      tslib: 2.6.2
+
+  '@swc/jest@0.2.36(@swc/core@1.6.1(@swc/helpers@0.5.11))':
     dependencies:
       '@jest/create-cache-key-function': 29.7.0
-      '@swc/core': 1.6.1
+      '@swc/core': 1.6.1(@swc/helpers@0.5.11)
       '@swc/counter': 0.1.3
       jsonc-parser: 3.2.1
 
@@ -3444,7 +3460,13 @@ snapshots:
 
   '@types/stack-utils@2.0.3': {}
 
+  '@types/uuid@8.3.4': {}
+
   '@types/ws@7.4.7':
+    dependencies:
+      '@types/node': 20.14.2
+
+  '@types/ws@8.5.10':
     dependencies:
       '@types/node': 20.14.2
 
@@ -4367,8 +4389,6 @@ snapshots:
   estraverse@5.3.0: {}
 
   esutils@2.0.3: {}
-
-  eventemitter3@4.0.7: {}
 
   eventemitter3@5.0.1: {}
 
@@ -5502,9 +5522,13 @@ snapshots:
     dependencies:
       glob: 7.2.3
 
-  rpc-websockets@8.0.1:
+  rpc-websockets@9.0.1:
     dependencies:
-      eventemitter3: 4.0.7
+      '@swc/helpers': 0.5.11
+      '@types/uuid': 8.3.4
+      '@types/ws': 8.5.10
+      buffer: 6.0.3
+      eventemitter3: 5.0.1
       uuid: 8.3.2
       ws: 8.16.0(bufferutil@4.0.8)(utf-8-validate@5.0.10)
     optionalDependencies:
