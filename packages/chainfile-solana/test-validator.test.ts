@@ -1,9 +1,9 @@
-import { ChainfileTestcontainers } from '@chainfile/testcontainers';
+import { CFTestcontainers } from '@chainfile/testcontainers';
 import { afterAll, beforeAll, describe, expect, it } from '@workspace/jest/globals';
 
 import test from './test-validator.json';
 
-const testcontainers = new ChainfileTestcontainers(test);
+const testcontainers = new CFTestcontainers(test);
 
 beforeAll(async () => {
   await testcontainers.start();
