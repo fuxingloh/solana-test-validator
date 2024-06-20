@@ -9,7 +9,7 @@ updates:
     schedule:
       interval: 'weekly'
     groups:
-      development:
+      dev:
         dependency-type: development
         update-types:
           - 'minor'
