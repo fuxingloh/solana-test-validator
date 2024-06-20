@@ -13,7 +13,7 @@
     "solana": {
       "image": "ghcr.io/vetumorg/solana-test-validator",
       "tag": {
-        "$value": "version"
+        "$param": "version"
       },
       "source": "https://github.com/vetumorg/chainfile-solana",
       "resources": {
