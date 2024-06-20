@@ -15,7 +15,7 @@
   },
   "prettier": "@workspace/prettier-config",
   "devDependencies": {
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.14.6",
     "@workspace/eslint-config": "workspace:*",
     "@workspace/jest": "workspace:*",
     "@workspace/prettier-config": "workspace:*",
