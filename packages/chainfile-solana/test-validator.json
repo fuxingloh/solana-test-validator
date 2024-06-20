@@ -2,7 +2,7 @@
   "$schema": "https://chainfile.org/schema.json",
   "caip2": "solana:00000000000000000000000000000000",
   "name": "Solana Test Validator",
-  "values": {
+  "params": {
     "version": {
       "description": "Solana test validator version to use, the container image is built in the chainfile-solana repository. Published in to ghcr.io/vetumorg/solana-test-validator, to see the available versions check github.com/vetumorg/chainfile-solana/pkgs/container/solana-test-validator",
       "default": "1.18.15"
