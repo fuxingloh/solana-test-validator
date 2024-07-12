@@ -16,13 +16,10 @@
     "push:docker": {
       "cache": false
     },
-    "test": {
-      "dependsOn": ["solana-docker#build:docker", "^build"]
-    },
     "solana-testcontainers#build": {
       "inputs": ["src/**"],
       "outputs": ["dist/**"],
-      "dependsOn": ["solana-docker#build:docker", "^build"]
+      "dependsOn": ["solana-test-validator#build:docker", "^build"]
     },
     "lint": {
       "outputs": []
