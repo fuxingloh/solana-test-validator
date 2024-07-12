@@ -2,7 +2,7 @@ import { Connection, ConnectionConfig } from '@solana/web3.js';
 import { AbstractStartedContainer, GenericContainer, StartedTestContainer, Wait } from 'testcontainers';
 
 export class SolanaContainer extends GenericContainer {
-  constructor(image: string = `ghcr.io/fuxingloh/solana-test-validator:1.18.15`) {
+  constructor(image: string = `ghcr.io/fuxingloh/solana-test-validator:1.18.18`) {
     super(image);
     this.withWaitStrategy(Wait.forLogMessage('Processed Slot:'));
     this.withExposedPorts(
