@@ -16,5 +16,3 @@ updates:
           - 'patch'
         exclude-patterns:
           - '@solana/web3.js'
-          - 'chainfile-*'
-          - '@chainfile/*'

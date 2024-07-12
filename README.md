@@ -1,8 +1,9 @@
-# Chainfile Solana
+# Solana Test Validator Container
 
-Part of the [Chainfile](https://chainfile.org) ecosystem,
-this library provides a Docker image for running `solana-test-validator` in a container for toolchain isolation.
+Provides a Docker image for running `solana-test-validator` in a container for toolchain isolation.
 This is particularly useful for language-agnostic development and parallelization of systems.
+
+> Initially created for use in [fuxingloh/chainfile](https://github.com/fuxingloh/chainfile).
 
 > The default [solanalabs/solana](https://hub.docker.com/r/solanalabs/solana) is an optimized image,
 > when used on a host system that does not support AVX, it will fail with the following error:
@@ -11,7 +12,7 @@ This is particularly useful for language-agnostic development and parallelizatio
 ## `solana-testcontainers`
 
 This is a standalone testcontainers-node package for running `solana-test-validator` in a container for testing
-purposes. You don't need to use the Chainfile ecosystem to use this package.
+purposes.
 
 ```shell
 npm i -D solana-testcontainers @solana/web3.js

@@ -9,4 +9,3 @@ build
 coverage
 .nyc_output
 .turbo
-.chainfile

@@ -1,5 +1,4 @@
-This project is part of the [Chainfile](https://chainfile.org) ecosystem;
-it provides a Docker image for running `solana-test-validator` in a container for toolchain isolation.
+Provides a Docker image for running `solana-test-validator` in a container for toolchain isolation.
 
 ```shell
 npm i -D solana-testcontainers @solana/web3.js

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": false,
   "repository": {
-    "url": "git+https://github.com/vetumorg/chainfile-solana"
+    "url": "git+https://github.com/fuxingloh/solana-test-validator"
   },
   "license": "MPL-2.0",
   "main": "dist/index.js",

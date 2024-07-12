@@ -20,23 +20,23 @@ async function run(version, type) {
     '.',
     '--progress=plain',
     '-t',
-    `ghcr.io/vetumorg/solana-test-validator:${version}`,
+    `ghcr.io/fuxingloh/solana-test-validator:${version}`,
     '--build-arg',
     `SOLANA_VERSION=${version}`,
     '--cache-from',
-    'type=registry,ref=ghcr.io/vetumorg/solana-test-validator:build-cache',
+    'type=registry,ref=ghcr.io/fuxingloh/solana-test-validator:build-cache',
   ];
 
   if (type === 'push') {
     args.push(
       '-t',
-      'ghcr.io/vetumorg/solana-test-validator:latest',
+      'ghcr.io/fuxingloh/solana-test-validator:latest',
       '--output',
       'type=registry',
       '--platform',
       'linux/amd64,linux/arm64',
       '--cache-to',
-      'type=registry,ref=ghcr.io/vetumorg/solana-test-validator:build-cache',
+      'type=registry,ref=ghcr.io/fuxingloh/solana-test-validator:build-cache',
     );
   }
 
