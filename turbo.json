@@ -16,6 +16,9 @@
     "push:docker": {
       "cache": false
     },
+    "test": {
+      "dependsOn": ["solana-test-validator#build:docker", "^build"]
+    },
     "solana-testcontainers#build": {
       "inputs": ["src/**"],
       "outputs": ["dist/**"],

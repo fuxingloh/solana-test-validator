@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/chainfile-solana.iml" filepath="$PROJECT_DIR$/.idea/chainfile-solana.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/solana-test-validator.iml" filepath="$PROJECT_DIR$/.idea/solana-test-validator.iml" />
     </modules>
   </component>
 </project>
