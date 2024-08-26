@@ -33,7 +33,7 @@
     "testcontainers": "^10.10.3"
   },
   "devDependencies": {
-    "@solana/web3.js": "1.95.0"
+    "@solana/web3.js": "1.95.3"
   },
   "peerDependencies": {
     "@solana/web3.js": "^1"
