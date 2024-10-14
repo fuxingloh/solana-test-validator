@@ -2,6 +2,6 @@
   "name": "@workspace/prettier-config",
   "private": true,
   "devDependencies": {
-    "prettier-plugin-packagejson": "^2.5.0"
+    "prettier-plugin-packagejson": "^2.5.3"
   }
 }
