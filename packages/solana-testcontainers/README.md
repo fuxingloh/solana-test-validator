@@ -1,7 +1,7 @@
 Provides a Docker image for running `solana-test-validator` in a container for toolchain isolation.
 
 ```shell
-npm i -D solana-testcontainers @solana/web3.js
+npm i -D solana-testcontainers @solana/web3.js@1
 ```
 
 ```typescript

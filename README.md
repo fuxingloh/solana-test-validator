@@ -15,7 +15,7 @@ This is a standalone testcontainers-node package for running `solana-test-valida
 purposes.
 
 ```shell
-npm i -D solana-testcontainers @solana/web3.js
+npm i -D solana-testcontainers @solana/web3.js@1
 ```
 
 ```typescript
